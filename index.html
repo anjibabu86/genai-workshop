@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Hole Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #ff8c00; /* Blackhole orange */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        button {
+            background-color: #ff8c00;
+            color: #1a1a1a;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #e07b00;
+        }
+
+        .fact-display {
+            margin-top: 20px;
+            font-size: 18px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .fact-display.show {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="showFactButton">Show Fact</button>
+        <div id="factDisplay" class="fact-display"></div>
+    </div>
+    <script>
+        const facts = [
+            "Black holes are regions in space where the gravitational pull is so strong that nothing, not even light, can escape from them.",
+            "The boundary around a black hole beyond which nothing can escape is called the event horizon.",
+            "Black holes can vary in size, from small ones with the mass of a single star to supermassive black holes with millions or even billions of times the mass of our Sun.",
+            "The closest known black hole to Earth is about 1,000 light-years away in the constellation Telescopium.",
+            "Black holes can 'sing'! They emit gravitational waves that can be detected by instruments like LIGO.",
+            "Time behaves differently near a black hole. The closer you get to the event horizon, the slower time moves relative to an outside observer.",
+            "Stephen Hawking proposed that black holes can emit radiation, known as Hawking radiation, which can cause them to lose mass and eventually evaporate.",
+            "Black holes can merge with each other, creating an even larger black hole and releasing massive amounts of energy in the form of gravitational waves.",
+            "The first-ever image of a black hole was captured in 2019 by the Event Horizon Telescope, showing the supermassive black hole in the galaxy M87.",
+            "Despite their name, black holes are not empty; they contain a singularity, a point where matter is thought to be infinitely dense."
+        ];
+
+        document.getElementById('showFactButton').addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            const factDisplay = document.getElementById('factDisplay');
+            factDisplay.textContent = facts[randomIndex];
+            factDisplay.classList.add('show');
+        });
+    </script>
+</body>
+</html>
